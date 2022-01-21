@@ -33,6 +33,6 @@ function simulateFly(rocket){
 		rocket.pos+=rocket.accel;
 	}
 
-	drawRocket(windowWidth,windowHeight,rocket.tipStrength,rocket.tankStrength,rocket.exhaustStrength,0.5);
+	drawRocket(width,height,rocket.tipStrength,rocket.tankStrength,rocket.exhaustStrength,0.5);
 	
 }

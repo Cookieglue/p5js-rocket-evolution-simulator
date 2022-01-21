@@ -36,16 +36,23 @@ button.prototype.drawButton = function(){
     rect(this.x, this.y, this.w, this.h, 10);
 
 
-    fill(255);
-    text(this.txt, this.x, this.y);
+    fill(wht);
+	noStroke();
+    textSize(this.w / this.txt.length*1.8);
+    text(this.txt, this.x + this.w/2, this.y + this.h/2);
 
 }
 
 function initializeButtons(){
 	
-	button[0] = new button(pad*2 + windowWidth/2, pad*2 + windowHeight/2 , windowWidth/4 - pad, (windowHeight -pad*3)/4, drkrGry, "uwu");
-	button[1] = new button();
-	button[2] = new button();
+	var originX = pad*3 + width/2;
+	var originY = pad*2 + height/2;
+	var buttonWidth =  width/4 - pad*4;
+	var buttonHeight = height/4 - pad*2;
+
+	buttonList[0] = new button(originX,originY , buttonWidth, buttonHeight, drkrGry, "Run Quick Simulation");
+	buttonList[1] = new button(originX + buttonWidth +pad, originY,buttonWidth, buttonHeight, drkrGry, "Run Long Simulation");
+	buttonList[2] = new button(originX, originY +buttonHeight +pad, buttonWidth, buttonHeight, drkrGry, "rggregrerg");
 
 	
 }

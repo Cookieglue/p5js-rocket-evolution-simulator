@@ -40,17 +40,17 @@ function drawFlyBackground(rocket){
 	
 		fill(158, 185, 247,i*10);
 		noStroke();
-		rect(0,-i*100+800,windowWidth,i*100);
+		rect(0,-i*100+800,width,i*100);
 		
 	}
 	for (var i = 0 ; i <=100 ; i++) {
 	
 		stroke(20);
-		line(0,-i*100+windowHeight, windowWidth, -i*100+windowHeight);
-		text(i, 20, -i*100 +windowHeight -10);
+		line(0,-i*100+height, width, -i*100+height);
+		text(i, 20, -i*100 +height -10);
 		
 	}
 	fill(92, 247, 125);
-	rect(0, windowHeight-100,windowWidth,windowHeight);
+	rect(0, height-100,width,height);
 	pop();
 }

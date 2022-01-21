@@ -7,7 +7,7 @@ var dat = [];
 var dat2 = [];
 var dat3 = [];
 var a =[];
-var button =[];
+var buttonList =[];
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -18,6 +18,7 @@ function setup() {
 	drkrGry = color('#302e2b');
 	blk = color('#252422');
 	orng = color('#eb5e28');
+	textAlign(CENTER);
 	
 	for (var i = 0 ; i <= 10 ; i ++){
 	
@@ -37,6 +38,8 @@ function draw() {
 	//drawFlyBackground(a[0]);
 	//simulateFly(a[0]);
 	mainMenu();
-	button[0].buttonLogic();
-	button[0].drawButton();
+	for (var i = 0 ; i < buttonList.length ; i ++){
+		buttonList[i].buttonLogic();
+		buttonList[i].drawButton();
+	}
 }
