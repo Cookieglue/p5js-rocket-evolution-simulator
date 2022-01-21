@@ -17,7 +17,7 @@ function mainMenu(){
 
 function performanceGraph (top, med, bot){
 	
-	var length = (width/2 - pad * 4 )/top.length
+	var length = (width/2 - pad * 4 -pad*5)/top.length
 	var graphHeight = (height/2 - pad * 8) / top[top.length-1];
 	
 	stroke(255);
@@ -31,27 +31,27 @@ function performanceGraph (top, med, bot){
 	//top
 	stroke(0,255,0);
 	for (var i = 0; i < top.length ; i++){
-		strokeWeight(8);
+		strokeWeight(6);
 		point(length*i + pad*5, (height/2 - pad * 4 ) - graphHeight*top[i]);
-		strokeWeight(1);
+		strokeWeight(2);
 		line(length*i + pad*5, (height/2 - pad * 4 ) - graphHeight*top[i],
 				length*(i-1) + pad*5, (height/2 - pad * 4 ) - graphHeight*top[i-1]);
 	}
 	//med
 	stroke(255);
 	for (var i = 0; i < med.length ; i++){
-		strokeWeight(8);
+		strokeWeight(6);
 		point(length*i + pad*5, (height/2 - pad * 4 ) - graphHeight*med[i]);
-		strokeWeight(1);
+		strokeWeight(2);
 		line(length*i + pad*5, (height/2 - pad * 4 ) - graphHeight*med[i],
 				length*(i-1) + pad*5, (height/2 - pad * 4 ) - graphHeight*med[i-1]);
 	}
 	//bot
 	stroke(255,0,0);
 	for (var i = 0; i < bot.length ; i++){
-		strokeWeight(8);
+		strokeWeight(6);
 		point(length*i + pad*5, (height/2 - pad * 4 ) - graphHeight*bot[i]);
-		strokeWeight(1);
+		strokeWeight(2);
 		line(length*i + pad*5, (height/2 - pad * 4 ) - graphHeight*bot[i],
 				length*(i-1) + pad*5, (height/2 - pad * 4 ) - graphHeight*bot[i-1]);
 	}

@@ -8,10 +8,12 @@ var dat2 = [];
 var dat3 = [];
 var a =[];
 var buttonList =[];
+var scene;
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	
+	scene = a => mainMenu();
+
 	wht = color('#fffcf2');
 	gry = color('#ccc5b9');
 	drkGry = color('#403d39')
@@ -37,7 +39,7 @@ function setup() {
 function draw() {
 	//drawFlyBackground(a[0]);
 	//simulateFly(a[0]);
-	mainMenu();
+	scene();
 	for (var i = 0 ; i < buttonList.length ; i ++){
 		buttonList[i].buttonLogic();
 		buttonList[i].drawButton();
