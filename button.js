@@ -1,3 +1,4 @@
+
 function button(x,y,w,h, col, txt, result){
 	this.x =x;
 	this.y = y;
@@ -17,7 +18,11 @@ button.prototype.buttonLogic = function(){
 			this.hover = true
 
 			if (mouseIsPressed){
-				this.result();
+				if (this.result != null){
+					scene = this.result;
+				}else{
+					print("Button has no result function!");
+				}
 			}
 		}
 		else{
@@ -49,11 +54,11 @@ function initializeButtons(){
 	var buttonWidth =  width/4 - pad*4;
 	var buttonHeight = height/4 - pad*3;
 
-	buttonList[0] = new button(originX,originY , buttonWidth, buttonHeight, drkrGry, "Run Quick Simulation", a=> scene => simulateFly());
+	menuButtonList[0] = new button(originX,originY , buttonWidth, buttonHeight, drkrGry, "Run Quick Simulation", a=> blankPage());
 
-	buttonList[1] = new button(originX + buttonWidth +pad, originY,buttonWidth, buttonHeight, drkrGry, "Run Long Simulation");
-	buttonList[2] = new button(originX, originY +buttonHeight +pad, buttonWidth, buttonHeight, drkrGry, "Print Data");
-  buttonList[3] = new button(originX + buttonWidth + pad, originY +buttonHeight +pad, buttonWidth, buttonHeight, drkrGry, "Print Data");
+	menuButtonList[1] = new button(originX + buttonWidth +pad, originY,buttonWidth, buttonHeight, drkrGry, "Run Long Simulation");
+	menuButtonList[2] = new button(originX, originY +buttonHeight +pad, buttonWidth, buttonHeight, drkrGry, "Print Data");
+  	menuButtonList[3] = new button(originX + buttonWidth + pad, originY +buttonHeight +pad, buttonWidth, buttonHeight, drkrGry, "Print Data");
 
 	
 }

@@ -1,18 +1,32 @@
 var pad = 10;
 function mainMenu(){
 	
+	//setup
 	background(blk);
 	fill(drkGry);
 	noStroke();
 	
-	//overall analytics
+	//overall analytics panel
 	rect(pad,pad,width/2 -pad*2 ,height/2 -pad*2,10);
 	//control panel
 	rect(pad ,pad +height/2 ,width/2 -pad*2 ,height/2 -pad*3,10);
 	//recent stats
 	rect(pad + width/2 ,pad, width/2 -pad*2 ,height -pad*3,10);
 	
+	//graphs
 	performanceGraph(dat, dat2, dat3);
+
+	//buttons
+	for (var i = 0 ; i < menuButtonList.length ; i ++){
+		menuButtonList[i].buttonLogic();
+		menuButtonList[i].drawButton();
+	}
+}
+
+function blankPage(){
+	background(255);
+	fill(0);
+	text("hi!" + millis(), 200,200);
 }
 
 function performanceGraph (top, med, bot){

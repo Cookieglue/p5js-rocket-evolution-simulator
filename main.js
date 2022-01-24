@@ -7,7 +7,7 @@ var dat = [];
 var dat2 = [];
 var dat3 = [];
 var a =[];
-var buttonList =[];
+var menuButtonList =[];
 var scene;
 
 function setup() {
@@ -40,8 +40,5 @@ function draw() {
 	//drawFlyBackground(a[0]);
 	//simulateFly(a[0]);
 	scene();
-	for (var i = 0 ; i < buttonList.length ; i ++){
-		buttonList[i].buttonLogic();
-		buttonList[i].drawButton();
-	}
+	
 }
