@@ -6,7 +6,7 @@ var orng;
 var dat = [];
 var dat2 = [];
 var dat3 = [];
-var a =[];
+
 var menuButtonList =[];
 var scene;
 
@@ -22,9 +22,10 @@ function setup() {
 	orng = color('#eb5e28');
 	textAlign(CENTER);
 	
+	var rocketList =[];
 	for (var i = 0 ; i <= 10 ; i ++){
 	
-		a[i] = new rocket (random(0,1),random(0,1),random(0,1));
+		rocketList[i] = new rocket (random(0,1),random(0,1),random(0,1));
 		
 	}
 	for (var i = 0 ; i <= 30 ; i++){

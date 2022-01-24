@@ -23,10 +23,10 @@ function mainMenu(){
 	}
 }
 
-function blankPage(){
+function blankPage(words){
 	background(255);
 	fill(0);
-	text("hi!" + millis(), 200,200);
+	text(words + millis(), 200,200);
 }
 
 function performanceGraph (top, med, bot){

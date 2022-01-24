@@ -31,6 +31,9 @@ function drawRocket(x,y,nossleTip, tankStrength, exhaustStrength, size){
 }
 
 function drawFlyBackground(rocket){
+
+	simulateFly(rocket);
+
 	background(20);
 	stroke(255);
 	strokeWeight(3);
