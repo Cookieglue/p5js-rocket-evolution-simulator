@@ -32,28 +32,29 @@ function drawRocket(x,y,nossleTip, tankStrength, exhaustStrength, size){
 
 function drawFlyBackground(rocket){
 
-	simulateFly(rocket);
-
 	background(20);
 	stroke(255);
 	strokeWeight(3);
 	push();
 	translate(0,rocket.pos);
+	background(0,0,0);
+	//gradient sky
 	for (var i = 0 ; i <=50 ; i++) {
 	
-		fill(158, 185, 247,i*10);
+		fill(77, 187, 255, 255/i);
 		noStroke();
-		rect(0,-i*100+800,width,i*100);
+		rect(0,height - i*height/10,width, i*height/10);
 		
 	}
-	for (var i = 0 ; i <=100 ; i++) {
+	//counter lines
+	for (var i = 1 ; i <=100 ; i++) {
 	
-		stroke(20);
-		line(0,-i*100+height, width, -i*100+height);
-		text(i, 20, -i*100 +height -10);
+		stroke(60);
+		line(0,height - i*height/10, width, height - i*height/10);
+		text(i-1, 20, height - i*height/10);
 		
 	}
 	fill(92, 247, 125);
-	rect(0, height-100,width,height);
+	rect(0, height-height/10,width,height);
 	pop();
 }

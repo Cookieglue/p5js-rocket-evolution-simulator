@@ -27,12 +27,14 @@ function simulateFly(rocket){
 	rocket.accel+=gravity;
 	rocket.vel+=rocket.accel;
 	
-	if(rocket.pos < -100){
+	if(-rocket.pos +400 > height-height/10){
+		
 	}
 	else{
 		rocket.pos+=rocket.accel;
 	}
 
-	drawRocket(width,height,rocket.tipStrength,rocket.tankStrength,rocket.exhaustStrength,0.5);
+	drawFlyBackground(rocket);
+	drawRocket(width,height,rocket.tipStrength,rocket.tankStrength,rocket.exhaustStrength,0.50);
 	
 }
