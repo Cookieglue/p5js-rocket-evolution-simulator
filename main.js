@@ -22,12 +22,6 @@ function setup() {
 	orng = color('#eb5e28');
 	textAlign(CENTER);
 	
-	var rocketList =[];
-	for (var i = 0 ; i <= 10 ; i ++){
-	
-		rocketList[i] = new rocket (random(0,1),random(0,1),random(0,1));
-		
-	}
 	for (var i = 0 ; i <= 30 ; i++){
 		dat[i] = i*2 + random(0,5);
 		dat2[i] = i+ random(0,5);;
