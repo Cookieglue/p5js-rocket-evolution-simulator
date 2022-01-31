@@ -2,7 +2,7 @@
 function drawTip(x,y, strength){
 	fill(255, 175, 204);
 	noStroke();
-	quad(x-40 + strength*40, y, x + 40 - strength*40, y , 
+	quad(x- strength*40, y, x + strength*40, y , 
 			 x+40, y+40, x - 40, y+40);
 }
 function drawTank(x,y, strength){

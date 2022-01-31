@@ -54,8 +54,14 @@ function initializeButtons(){
 	var buttonWidth =  width/4 - pad*4;
 	var buttonHeight = height/4 - pad*3;
 
-	var rocket1= new rocket (random(0,1),random(0,1),random(0,1));
-	menuButtonList[0] = new button(originX,originY , buttonWidth, buttonHeight, drkrGry, "Run Quick Simulation", a=> simulateFly( rocket1));
+	var rocketList =[];
+	for (var i = 0 ; i <= 20 ; i ++){
+	
+		rocketList[i] = new rocket (random(0,1),random(0,1),random(0,1));
+		
+	}
+
+	menuButtonList[0] = new button(originX,originY , buttonWidth, buttonHeight, drkrGry, "Run Quick Simulation", a=> simulateFly( rocketList));
 
 	menuButtonList[1] = new button(originX + buttonWidth +pad, originY,buttonWidth, buttonHeight, drkrGry, "Run Long Simulation");
 	menuButtonList[2] = new button(originX, originY +buttonHeight +pad, buttonWidth, buttonHeight, drkrGry, "Print Data");

@@ -16,25 +16,28 @@ function rocket (tipStrength, tankStrength, exhaustStrength)
 	
 }
 
-function simulateFly(rocket){
-	
-	rocket.fuel-= 0.01*rocket.exhaustStrength;
-	
-	if(rocket.fuel > 0){
-		rocket.accel += fuelConst*rocket.exhaustStrength / rocket.tankStrength;
-	}
-	rocket.accel-= rocket.tipStrength*rocket.vel*frictionConst;
-	rocket.accel+=gravity;
-	rocket.vel+=rocket.accel;
-	
-	if(-rocket.pos +400 > height-height/10){
-		
-	}
-	else{
-		rocket.pos+=rocket.accel;
-	}
+function simulateFly(rockets){
 
-	drawFlyBackground(rocket);
-	drawRocket(width,height,rocket.tipStrength,rocket.tankStrength,rocket.exhaustStrength,0.50);
-	
+	var top = getMaxPosition(rockets);
+
+	drawFlyBackground(top);
+
+	for (var i = 0 ; i <= 10; i++){
+		rockets[i].fuel-= 0.01*rockets[i].exhaustStrength;
+		
+		if(rockets[i].fuel > 0){
+			rockets[i].accel += fuelConst*rockets[i].exhaustStrength / rockets[i].tankStrength;
+		}
+		rockets[i].accel-= rockets[i].tipStrength*rockets[i].vel*frictionConst;
+		rockets[i].accel+=gravity;
+		rockets[i].vel+=rockets[i].accel;
+		
+		if(-rockets[i].pos +400 > height-height/10){
+			
+		}
+		else{
+			rockets[i].pos+=rockets[i].accel;
+		}
+		drawRocket(10 + i *100, height/2 + top.pos-rockets[i].pos,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength,1);
+	}
 }
