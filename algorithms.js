@@ -9,3 +9,48 @@ function getMaxPosition(list){
     }
     return max;
 }
+
+function partition(array, low, high){
+    
+    //set pivot as right of the array
+    var pivot = array[high];
+    
+    var i = low-1;
+    
+    //loop through elements and compare them to the pivot
+    for (var x = low ; x < high ; x++){
+        
+        if (array[x] <= pivot){
+            
+            i++;
+            //swap i with j
+            var temp = array[i];
+            array[i] = array[x];
+            array[x] = temp;
+            
+        }
+        
+    }
+    // swapt the pivot element with the greater element specified by i
+    var temp = array[i + 1];
+    array[i + 1] = array[high];
+    array[high] = temp;
+    // return the position from where partition is done
+    return (i + 1);
+};
+function quickSort (array, low, high){
+
+    if (low < high){
+        // find pivot element such that
+      // elements smaller than pivot are on the left
+      // elements greater than pivot are on the right
+      var pi = partition(array, low, high);
+      
+      // recursive call on the left of pivot
+      quickSort(array, low, pi - 1);
+
+      // recursive call on the right of pivot
+      quickSort(array, pi + 1, high);
+    }
+    return 
+}
