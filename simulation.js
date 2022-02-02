@@ -22,7 +22,9 @@ function simulateFly(rockets){
 
 	drawFlyBackground(top);
 
-	for (var i = 0 ; i <= 10; i++){
+	for (var i = 0 ; i <= rockets.length-1; i++){
+		var positions = rockets[i].pos;
+
 		rockets[i].fuel-= 0.01*rockets[i].exhaustStrength;
 		
 		if(rockets[i].fuel > 0){
@@ -39,5 +41,7 @@ function simulateFly(rockets){
 			rockets[i].pos+=rockets[i].accel;
 		}
 		drawRocket(10 + i *100, height/2 + top.pos-rockets[i].pos,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength,1);
+		
 	}
+	quickSort(rockets,0,rockets.length-1);
 }

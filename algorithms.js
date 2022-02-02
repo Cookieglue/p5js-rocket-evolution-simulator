@@ -11,7 +11,7 @@ function getMaxPosition(list){
 }
 
 function partition(array, low, high){
-    
+
     //set pivot as right of the array
     var pivot = array[high];
     
@@ -20,7 +20,7 @@ function partition(array, low, high){
     //loop through elements and compare them to the pivot
     for (var x = low ; x < high ; x++){
         
-        if (array[x] <= pivot){
+        if (array[x].pos <= pivot.pos){
             
             i++;
             //swap i with j
@@ -52,5 +52,4 @@ function quickSort (array, low, high){
       // recursive call on the right of pivot
       quickSort(array, pi + 1, high);
     }
-    return 
 }
