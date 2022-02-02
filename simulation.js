@@ -44,4 +44,7 @@ function simulateFly(rockets){
 		
 	}
 	quickSort(rockets,0,rockets.length-1);
+
+	setTimeout(() => scene = a => mainMenu(), 4000);
+	return rockets;
 }
