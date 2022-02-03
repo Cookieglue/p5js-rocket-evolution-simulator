@@ -71,3 +71,27 @@ function performanceGraph (top, med, bot){
 	}
 	noStroke();
 }
+
+function drawOffspringMenu(rockets){
+	//setup
+	background(blk);
+	noStroke();
+	fill(drkGry);
+	rect(width/2 - width/4, pad, width/2, height/8,10);
+	textSize(width/48);
+	textAlign(CENTER);
+	fill(wht);
+	text("Rocket Results!", width/2, pad + height/16);
+
+	quickSort(rockets,0,rockets.length-1);
+
+	for (var i = 0 ; i < rockets.length; i++){
+		var spacing = width/(rockets.length+1);
+
+		drawRocket(spacing + i *spacing, 200,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength,1);
+		fill(wht);
+		textSize(20);
+		text(round(rockets[i].pos),150 + i *spacing, 800);
+	}
+
+}

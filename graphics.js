@@ -58,18 +58,3 @@ function drawFlyBackground(rocket){
 	rect(0, height-height/10,width,height);
 	pop();
 }
-function drawOffspringMenu(rockets){
-	//setup
-	background(blk);
-	noStroke();
-
-	quickSort(rockets,0,rockets.length-1);
-
-	for (var i = 0 ; i < rockets.length; i++){
-		drawRocket(150 + i *150, 200,rockets[i].tankStrength,rockets[i].exhaustStrength,1);
-		fill(wht);
-		textSize(20);
-		text(round(rockets[i].pos),150 + i *150, 800);
-	}
-
-}
