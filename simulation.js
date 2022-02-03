@@ -22,7 +22,7 @@ function simulateFly(rockets){
 
 	drawFlyBackground(top);
 
-	for (var i = 0 ; i <= rockets.length-1; i++){
+	for (var i = 0 ; i < rockets.length; i++){
 		var positions = rockets[i].pos;
 
 		rockets[i].fuel-= 0.01*rockets[i].exhaustStrength;
@@ -43,8 +43,7 @@ function simulateFly(rockets){
 		drawRocket(10 + i *100, height/2 + top.pos-rockets[i].pos,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength,1);
 		
 	}
-	quickSort(rockets,0,rockets.length-1);
 
-	setTimeout(() => scene = a => mainMenu(), 4000);
+	setTimeout(() => scene = a => drawOffspringMenu(rockets), 4000);
 	return rockets;
 }
