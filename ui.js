@@ -75,9 +75,14 @@ function performanceGraph (top, med, bot){
 function drawOffspringMenu(rockets){
 	//setup
 	background(blk);
+	rectMode(CENTER);
 	noStroke();
 	fill(drkGry);
-	rect(width/2 - width/4, pad, width/2, height/8,10);
+	//title box
+	rect(width/2, pad +height/16, width/2, height/8,10);
+	//rocket box
+	fill(77, 72, 69);
+	rect(width/2,height*0.45, width*0.95, height/2,10);
 	textSize(width/48);
 	textAlign(CENTER);
 	fill(wht);
@@ -85,13 +90,14 @@ function drawOffspringMenu(rockets){
 
 	quickSort(rockets,0,rockets.length-1);
 
+	//draw rockets
 	for (var i = 0 ; i < rockets.length; i++){
 		var spacing = width/(rockets.length+1);
 
-		drawRocket(width/2 + (i-rockets.length/2) *spacing, 200,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength,0.5);
+		drawRocket(width/2 +  ((i+0.5)-rockets.length/2)*spacing, height*0.4,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength, width/(rockets.length*80 +spacing) / 2);
 		fill(wht);
 		textSize(20);
-		text(round(rockets[i].pos),150 + i *spacing, 800);
+		text(round(rockets[i].pos),width/2 + ((i+0.5)-rockets.length/2) *spacing, height*0.6);
 	}
 
 }

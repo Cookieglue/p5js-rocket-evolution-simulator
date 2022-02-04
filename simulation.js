@@ -44,6 +44,6 @@ function simulateFly(rockets){
 		
 	}
 
-	setTimeout(() => scene = a => drawOffspringMenu(rockets), 4000);
+	setTimeout(() => scene = a => drawOffspringMenu(rockets), 40);
 	return rockets;
 }

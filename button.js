@@ -55,7 +55,7 @@ function initializeButtons(){
 	var buttonHeight = height/4 - pad*3;
 
 	var rocketList =[];
-	for (var i = 0 ; i <= 10 ; i ++){
+	for (var i = 0 ; i < 10 ; i ++){
 	
 		rocketList[i] = new rocket (random(0,1),random(0,1),random(0,1));
 		
