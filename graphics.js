@@ -1,21 +1,24 @@
 
-function drawTip(x,y, strength){
+function drawTip(y,strength){
 	fill(255, 175, 204);
-	noStroke();
-	quad(x- strength*40, y, x + strength*40, y , 
-			 x+40, y+40, x - 40, y+40);
+	fill(orng);
+	quad(-strength*40, y-40, strength*40, y-40, 
+		40, y, - 40, y);
 }
-function drawTank(x,y, strength){
+function drawTank(strength){
 	fill(255, 200, 221);
-	noStroke();
-	rect(x,y,80, 200 *strength);
+	fill(gry)
+	rectMode(CENTER);
+	rect(0,0,80, 200 *strength);
+	fill(wht);
+	rect(0,0,40, constrain(100*strength, 0, 80),5);
 }
 
-function drawExhaust(x,y, strength){
+function drawExhaust(y, strength){
 	fill(255, 175, 204);
-	noStroke();
-	quad(x-40, y, x + 40, y , 
-			 x + strength*60, y+40, x - strength*60, y+40);
+	fill(drkGry);
+	quad(-40, y, 40, y , 
+			 strength*60, y+40, - strength*60, y+40);
 
 }
 
@@ -23,9 +26,12 @@ function drawRocket(x,y,nossleTip, tankStrength, exhaustStrength, size){
 	
 	push();
 	scale(size);
-	drawTip(x,y,nossleTip);
-	drawTank(x-40,y+40,tankStrength);
-	drawExhaust(x,y+40 + 200*tankStrength, exhaustStrength);
+	translate(x*1/size,y*1/size);
+	stroke(drkGry);
+	strokeWeight(1);
+	drawTip(-100*tankStrength,nossleTip);
+	drawTank(tankStrength);
+	drawExhaust(100*tankStrength, exhaustStrength);
 	pop();
 
 }

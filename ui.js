@@ -88,7 +88,7 @@ function drawOffspringMenu(rockets){
 	for (var i = 0 ; i < rockets.length; i++){
 		var spacing = width/(rockets.length+1);
 
-		drawRocket(spacing + i *spacing, 200,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength,1);
+		drawRocket(width/2 + (i-rockets.length/2) *spacing, 200,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength,0.5);
 		fill(wht);
 		textSize(20);
 		text(round(rockets[i].pos),150 + i *spacing, 800);
