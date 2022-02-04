@@ -40,10 +40,10 @@ function simulateFly(rockets){
 		else{
 			rockets[i].pos+=rockets[i].accel;
 		}
-		drawRocket(10 + i *100, height/2 + top.pos-rockets[i].pos,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength,0.5);
+		drawRocket(10 + i *100, height/2 + top.pos-rockets[i].pos,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength,1);
 		
 	}
 
-	setTimeout(() => scene = a => drawOffspringMenu(rockets), 40);
+	setTimeout(() => scene = a => drawOffspringMenu(rockets), 4000);
 	return rockets;
 }

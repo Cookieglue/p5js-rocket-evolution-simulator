@@ -9,8 +9,17 @@ var dat3 = [];
 
 var menuButtonList =[];
 var scene;
+var rocketList =[];
 
 function setup() {
+
+	//initialize rockets
+	for (var i = 0 ; i < 10 ; i ++){
+	
+		rocketList[i] = new rocket (random(0,1),random(0,1),random(0,1));
+		
+	}
+
 	createCanvas(windowWidth, windowHeight);
 	scene = a => mainMenu();
 
@@ -28,6 +37,7 @@ function setup() {
 		dat3[i] = i/2+ random(0,5);;
 	}
 	initializeButtons();
+
 	
 }
 
