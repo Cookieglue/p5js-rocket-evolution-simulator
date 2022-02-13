@@ -21,7 +21,7 @@ button.prototype.buttonLogic = function(){
 
 			if (mouseIsPressed){
 				if (this.result != null){
-					scene = this.result;
+					this.result();
 				}else{
 					print("Button has no result function!");
 				}
@@ -56,14 +56,23 @@ function initializeButtons(){
 	var buttonWidth =  width/4 - pad*4;
 	var buttonHeight = height/4 - pad*3;
 
-	menuButtonList[0] = new button(originX,originY , buttonWidth, buttonHeight, drkrGry, "Run Quick Simulation", a=> simulateFly( rocketList));
+	menuButtonList[0] = new button(originX,originY , buttonWidth, buttonHeight, drkrGry, "Run Quick Simulation", 
+	function() {
+		for(var i = 0; i <rocketList.length ; i ++){
+			rocketList[i].pos = 0;
+		}
+		setTimeout( a => scene = a=> drawOffspringMenu(rocketList), 4000);
+		scene = a=> simulateFly( rocketList); });
 
-	menuButtonList[1] = new button(originX + buttonWidth +pad, originY,buttonWidth, buttonHeight, drkrGry, "Run Long Simulation", a=>drawOffspringMenu(rocketList));
+	menuButtonList[1] = new button(originX + buttonWidth +pad, originY,buttonWidth, buttonHeight, drkrGry, "Run Long Simulation", 
+	scene = a=>drawOffspringMenu(rocketList));
 	menuButtonList[2] = new button(originX, originY +buttonHeight +pad, buttonWidth, buttonHeight, drkrGry, "Print Data");
   	menuButtonList[3] = new button(originX + buttonWidth + pad, originY +buttonHeight +pad, buttonWidth, buttonHeight, drkrGry, "Print Data");
 
-	menuButtonList[4]= new button(width/8,height*0.75,width/3,height*0.2,drkrGry, "Trial the Rockets", a=> evolve(rocketList));
-	menuButtonList[5]= new button(width*2/3-width/8,height*0.75,width/3,height*0.2,drkrGry, "Return To Menu", a=> mainMenu());
+	menuButtonList[4]= new button(width/8,height*0.75,width/3,height*0.2,drkrGry, "Trial the Rockets", 
+	scene = a=> evolve(rocketList));
+	menuButtonList[5]= new button(width*2/3-width/8,height*0.75,width/3,height*0.2,drkrGry, "Return To Menu", 
+	scene = a=> mainMenu());
 
 	
 }

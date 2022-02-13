@@ -44,12 +44,6 @@ function simulateFly(rockets){
 		drawRocket(10 + i *100, height/2 + top.pos-rockets[i].pos,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength,1);
 		
 	}
-	setTimeout( a => {showResults = true; }, 4000);
-	print(showResults);
-	if (showResults){
-		scene = a=>drawOffspringMenu(rocketList);
-		showResults = false;
-	}
 	
 	return rockets;
 }
