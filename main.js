@@ -3,13 +3,14 @@ var wht;
 var gry;
 var drkGry;
 var orng;
-var dat = [];
-var dat2 = [];
-var dat3 = [];
 
 var menuButtonList =[];
 var scene;
 var rocketList =[];
+
+var goodRocketDemographics = [];
+var meanRocketDemographics = [];
+var poorRocketDemographics = [];
 
 function setup() {
 
@@ -30,14 +31,7 @@ function setup() {
 	blk = color('#252422');
 	orng = color('#eb5e28');
 	textAlign(CENTER);
-	
-	for (var i = 0 ; i <= 30 ; i++){
-		dat[i] = i*2 + random(0,5);
-		dat2[i] = i+ random(0,5);;
-		dat3[i] = i/2+ random(0,5);;
-	}
 	initializeButtons();
-
 	
 }
 

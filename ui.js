@@ -14,7 +14,7 @@ function mainMenu(){
 	rect(pad + width/2 ,pad, width/2 -pad*2 ,height -pad*3,10);
 	
 	//graphs
-	performanceGraph(dat, dat2, dat3);
+	performanceGraph(goodRocketDemographics, meanRocketDemographics, poorRocketDemographics);
 
 	//buttons
 	for (var i = 0 ; i <= 3 ; i ++){
@@ -87,8 +87,6 @@ function drawOffspringMenu(rockets){
 	textAlign(CENTER);
 	fill(wht);
 	text("Rocket Results!", width/2, pad + height/16);
-
-	quickSort(rockets,0,rockets.length-1);
 
 	//draw rockets
 	for (var i = 0 ; i < rockets.length; i++){

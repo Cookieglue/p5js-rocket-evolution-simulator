@@ -63,3 +63,17 @@ function evolve (array,noise){
     }
     scene = a => drawOffspringMenu(rocketList);
 }
+
+function logDemographics (array, num){
+    //Low
+    poorRocketDemographics[num] = array[0].pos;
+    //Average
+    var mean = 0;
+    for (var i = 0 ; i < array.length ; i ++){
+        mean += array[i].pos;
+    }
+    mean /= array.length;
+    meanRocketDemographics[num] = mean;
+    //High
+    goodRocketDemographics[num] = array[array.length-1].pos;
+}

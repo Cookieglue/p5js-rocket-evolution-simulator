@@ -1,4 +1,4 @@
-let mouseIsReleased;
+var simulationNum = 0;
 
 function button(x,y,w,h, col, txt, result){
 	this.x =x;
@@ -64,8 +64,14 @@ function initializeButtons(){
 			rocketList[i].pos = 0;
 			rocketList[i].fuel = rocketList[i].tankStrength;
 		}
-		setTimeout( a => scene = a=> drawOffspringMenu(rocketList), 4000);
-		scene = a=> simulateFly( rocketList); });
+		setTimeout( a => {
+			scene = a=> drawOffspringMenu(rocketList); 
+			quickSort(rocketList,0,rocketList.length-1);
+			logDemographics(rocketList, simulationNum);
+			simulationNum ++;
+		}, 4000);
+		scene = a=> simulateFly( rocketList); 
+	});
 
 	menuButtonList[1] = new button(originX + buttonWidth +pad, originY,buttonWidth, buttonHeight, drkrGry, "Run Long Simulation", 
 	a=>{scene = a=>drawOffspringMenu(rocketList)});
