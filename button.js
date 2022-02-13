@@ -59,7 +59,10 @@ function initializeButtons(){
 	menuButtonList[0] = new button(originX,originY , buttonWidth, buttonHeight, drkrGry, "Run Quick Simulation", 
 	a=>{
 		for(var i = 0; i <rocketList.length ; i ++){
+			rocketList[i].accel = 0;
+			rocketList[i].vel = 0;
 			rocketList[i].pos = 0;
+			rocketList[i].fuel = rocketList[i].tankStrength;
 		}
 		setTimeout( a => scene = a=> drawOffspringMenu(rocketList), 4000);
 		scene = a=> simulateFly( rocketList); });
@@ -72,7 +75,7 @@ function initializeButtons(){
   	menuButtonList[3] = new button(originX + buttonWidth + pad, originY +buttonHeight +pad, buttonWidth, buttonHeight, drkrGry, "Print Data");
 
 	menuButtonList[4]= new button(width/8,height*0.75,width/3,height*0.2,drkrGry, "Trial the Rockets", 
-	a=> {scene = a=> evolve(rocketList);});
+	a=> {scene = a=> evolve(rocketList,0.1);});
 	menuButtonList[5]= new button(width*2/3-width/8,height*0.75,width/3,height*0.2,drkrGry, "Return To Menu", 
 	a=> {scene = a=> mainMenu();});
 
