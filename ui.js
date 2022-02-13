@@ -99,8 +99,10 @@ function drawOffspringMenu(rockets){
 		textSize(20);
 		text(round(rockets[i].pos),width/2 + ((i+0.5)-rockets.length/2) *spacing, height*0.6);
 	}
-
-	menuButtonList[4].drawButton();
-	menuButtonList[4].buttonLogic();
+	//buttons
+	for (var i = 4 ; i <= 5 ; i ++){
+		menuButtonList[i].buttonLogic();
+		menuButtonList[i].drawButton();
+	}
 
 }

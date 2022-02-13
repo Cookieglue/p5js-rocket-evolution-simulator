@@ -1,6 +1,7 @@
 var fuelConst = 0.5;
 var frictionConst =0.001;
 var gravity = -0.1;
+var showResults;
 
 function rocket (tipStrength, tankStrength, exhaustStrength)
 {
@@ -43,7 +44,11 @@ function simulateFly(rockets){
 		drawRocket(10 + i *100, height/2 + top.pos-rockets[i].pos,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength,1);
 		
 	}
-
-	setTimeout(() => scene = a => drawOffspringMenu(rockets), 4000);
+	setTimeout( a => {showResults = true; }, 4000);
+	print(showResults);
+	if (showResults){
+		scene = a=>drawOffspringMenu(rocketList);
+	}
+	
 	return rockets;
 }

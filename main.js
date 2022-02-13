@@ -42,8 +42,7 @@ function setup() {
 }
 
 function draw() {
-	//drawFlyBackground(a[0]);
-	//simulateFly(a[0]);
+
 	scene();
 	
 }
