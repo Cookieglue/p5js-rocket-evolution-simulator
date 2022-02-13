@@ -48,6 +48,7 @@ function simulateFly(rockets){
 	print(showResults);
 	if (showResults){
 		scene = a=>drawOffspringMenu(rocketList);
+		showResults = false;
 	}
 	
 	return rockets;

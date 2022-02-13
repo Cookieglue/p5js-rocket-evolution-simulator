@@ -62,7 +62,7 @@ function initializeButtons(){
 	menuButtonList[2] = new button(originX, originY +buttonHeight +pad, buttonWidth, buttonHeight, drkrGry, "Print Data");
   	menuButtonList[3] = new button(originX + buttonWidth + pad, originY +buttonHeight +pad, buttonWidth, buttonHeight, drkrGry, "Print Data");
 
-	menuButtonList[4]= new button(width/8,height*0.75,width/3,height*0.2,drkrGry, "Trial the Rockets", a=> mainMenu());
+	menuButtonList[4]= new button(width/8,height*0.75,width/3,height*0.2,drkrGry, "Trial the Rockets", a=> evolve(rocketList));
 	menuButtonList[5]= new button(width*2/3-width/8,height*0.75,width/3,height*0.2,drkrGry, "Return To Menu", a=> mainMenu());
 
 	

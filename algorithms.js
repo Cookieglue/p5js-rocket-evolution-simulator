@@ -53,3 +53,10 @@ function quickSort (array, low, high){
       quickSort(array, pi + 1, high);
     }
 }
+function evolve (array){
+    for (var i = 0 ; i < array.length/2 ; i ++){
+        var parent = rocketList[array.length/2+i];
+        array[i]=new rocket(parent.tipStrength, parent.tankStrength, parent.exhaustStrength);
+    }
+    scene = a => mainMenu();
+}
