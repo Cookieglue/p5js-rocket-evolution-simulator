@@ -58,5 +58,5 @@ function evolve (array){
         var parent = rocketList[array.length/2+i];
         array[i]=new rocket(parent.tipStrength, parent.tankStrength, parent.exhaustStrength);
     }
-    scene = a => mainMenu();
+    scene = a => drawOffspringMenu(rocketList);
 }
