@@ -1,6 +1,6 @@
-var fuelConst = 0.5;
-var frictionConst =0.001;
-var gravity = -0.1;
+var fuelConst = 0.2;
+var frictionConst =0.0001;
+var gravity = 0.1;
 var showResults;
 
 function rocket (tipStrength, tankStrength, exhaustStrength)
@@ -28,21 +28,23 @@ function simulateFly(rockets){
 
 		rockets[i].fuel-= 0.01*rockets[i].exhaustStrength;
 		
+		//propulsion
 		if(rockets[i].fuel > 0){
-			rockets[i].accel += fuelConst*rockets[i].exhaustStrength / rockets[i].tankStrength;
+			rockets[i].accel += fuelConst*rockets[i].exhaustStrength;
 		}
-		rockets[i].accel-= rockets[i].tipStrength*rockets[i].vel*frictionConst;
-		rockets[i].accel+=gravity;
-		rockets[i].vel+=rockets[i].accel;
+		//friction = 1/2 * const * cross sectional area (tipStrength) * v^2
+		rockets[i].accel-= 1/2* rockets[i].tipStrength*frictionConst *Math.pow(rockets[i].vel,2);
+		rockets[i].accel-=gravity;
+		rockets[i].vel+=rockets[i].accel/ rockets[i].tankStrength/10;
 		
-		if(-rockets[i].pos +400 > height-height/10){
-			
+		if(rockets[i].pos >= 0){
+			rockets[i].pos+=rockets[i].vel;
 		}
-		else{
-			rockets[i].pos+=rockets[i].accel;
-		}
-		drawRocket(10 + i *100, height/2 + top.pos-rockets[i].pos,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength,1);
+		//drawRocket(10 + i *100, height/2 + top.pos-rockets[i].pos,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength,1);
 		
+		var spacing = width/(rockets.length+1);
+
+		drawRocket(width/2 +  ((i+0.5)-rockets.length/2)*spacing, height/2 + top.pos-rockets[i].pos,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength, width/(rockets.length*80 +spacing) / 2);
 	}
 	
 	return rockets;

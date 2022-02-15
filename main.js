@@ -15,7 +15,7 @@ var poorRocketDemographics = [];
 function setup() {
 
 	//initialize rockets
-	for (var i = 0 ; i < 10 ; i ++){
+	for (var i = 0 ; i < 20 ; i ++){
 	
 		rocketList[i] = new rocket (random(0,1),random(0,1),random(0,1));
 		

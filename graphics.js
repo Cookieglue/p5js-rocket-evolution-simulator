@@ -60,7 +60,8 @@ function drawFlyBackground(rocket){
 		text(i-1, 20, height - i*height/10);
 		
 	}
+	//ground
 	fill(92, 247, 125);
-	rect(0, height-height/10,width,height);
+	rect(0, height/2,width,height);
 	pop();
 }
