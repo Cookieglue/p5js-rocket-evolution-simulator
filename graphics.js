@@ -53,11 +53,11 @@ function drawFlyBackground(rocket){
 		
 	}
 	//counter lines
-	for (var i = 1 ; i <=100 ; i++) {
+	for (var i = 1 ; i <=256 ; i++) {
 	
 		stroke(60);
 		line(0,height - i*height/10, width, height - i*height/10);
-		text(i-1, 20, height - i*height/10);
+		text(i-1, 50, height - i*height/10);
 		
 	}
 	//ground

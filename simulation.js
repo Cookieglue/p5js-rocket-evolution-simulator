@@ -40,10 +40,8 @@ function simulateFly(rockets){
 		if(rockets[i].pos >= 0){
 			rockets[i].pos+=rockets[i].vel;
 		}
-		//drawRocket(10 + i *100, height/2 + top.pos-rockets[i].pos,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength,1);
 		
 		var spacing = width/(rockets.length+1);
-
 		drawRocket(width/2 +  ((i+0.5)-rockets.length/2)*spacing, height/2 + top.pos-rockets[i].pos,rockets[i].tipStrength,rockets[i].tankStrength,rockets[i].exhaustStrength, width/(rockets.length*80 +spacing) / 2);
 	}
 	
