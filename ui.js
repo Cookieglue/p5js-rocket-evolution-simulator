@@ -1,3 +1,4 @@
+
 var pad = 10;
 function mainMenu(){
 	
@@ -10,7 +11,9 @@ function mainMenu(){
 	rect(pad,pad,width/2 -pad*2 ,height/2 -pad*2,10);
 	//control panel
 	rect(pad ,pad +height/2 ,width/2 -pad*2 ,height/2 -pad*3,10);
+	drawRocketDisplay(rocketList);
 	//recent stats
+	fill(drkGry);
 	rect(pad + width/2 ,pad, width/2 -pad*2 ,height -pad*3,10);
 	
 	//graphs
@@ -103,4 +106,30 @@ function drawOffspringMenu(rockets){
 		menuButtonList[i].drawButton();
 	}
 
+}
+function drawRocketDisplay(rockets){
+	//panels
+	var parentPanelWidth = width/2 -pad*4;
+	var spacing = parentPanelWidth/3;
+	fill(blk);
+	var size = spacing - pad*2;
+	var yPos =  height/2 +pad*4;
+	for (var i = 0; i <=2 ; i++){
+		//rocket panel
+		rect(pad*(2+i) + spacing*i, yPos, size, size,10);
+		//title panel
+		rect(pad*(2+i) + spacing*i, yPos+size+pad*3, size, size/5,10);
+		//display rockets
+		var index = (rockets.length-1) * floor((2-i)/2);
+		drawRocket(pad*2  + spacing*i +spacing/2 , yPos + size/2,rockets[index].tipStrength,rockets[index].tankStrength,rockets[index].exhaustStrength, size/350);
+	}
+	
+
+	//text
+	fill(wht);
+	textAlign(CENTER);
+	textSize(size/10);
+	text("Best",pad*2 +spacing/2, yPos+size+pad*3 +size/8);
+	text("Median",pad*2 +spacing*3/2, yPos+size+pad*3 +size/8);
+	text("Worst",pad*2 +spacing*5/2, yPos+size+pad*3 +size/8);
 }
